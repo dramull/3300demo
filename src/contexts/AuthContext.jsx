@@ -58,6 +58,8 @@ export function AuthProvider({ children }) {
     setUser({ id: 'demo', email: 'demo@prism.app', user_metadata: { display_name: 'Demo User' } });
   };
 
+  // API key stored client-side only — no server component exists.
+  // Users are informed in Settings page that keys stay in browser localStorage.
   const saveApiKey = (key) => {
     setApiKey(key);
     try { localStorage.setItem('prism_openrouter_key', key); } catch { /* noop */ }
